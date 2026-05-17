@@ -1,0 +1,17 @@
+{
+    "python.useEnvironmentsExtension": true,
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.terminal.useEnvFile": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportOptionalMemberAccess": "none",
+        "reportOptionalSubscript": "none",
+        "reportAssignmentType": "none",
+        "reportArgumentType": "none",
+        "reportGeneralTypeIssues": "none",
+        "reportIndexIssue": "none"
+    }
+}

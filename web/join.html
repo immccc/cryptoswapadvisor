@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join XXXXXXX — try our free Telegram bot for crypto portfolio signals, or request API access for advanced integrations.">
+    <meta name="keywords" content="join crypto bot, free crypto signals, telegram crypto bot, API trading signals">
+    <meta property="og:title" content="Join — XXXXXXX">
+    <meta property="og:description" content="Start with our free Telegram bot or request API access for advanced signal integrations.">
+    <meta property="og:url" content="https://xxxxxxx.com/join.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://xxxxxxx.com/join.html">
+    <title>Join — xxxxxxx</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.svg">
+    <script src="assets/components/sitenav.js" defer></script>
+    <script src="assets/components/footer.js" defer></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <site-nav></site-nav>
+
+    <main class="page">
+        <section class="plans">
+            <h1 class="plans__title">Check our plans</h1>
+
+            <div class="plans__grid">
+
+                <div class="plans__card plans__card--free">
+                    <div class="plans__header--free">
+                        <h2 class="plans__card-title">FREE</h2>
+                    </div>
+                    <ul class="plans__list">
+                        <li class="plans__item">Use the bot directly on Telegram, no setup required.</li>
+                        <li class="plans__item">Run simulations without touching real money.</li>
+                        <li class="plans__item">Get notifications and portfolio charts at every rotation. You decide whether to act on them or not.</li>
+                        <li class="plans__item"><strong>Try the backtesting feature to replay the bot's behavior on past market scenarios.</strong></li>
+                    </ul>
+                    <div class="plans__footer">
+                        <div class="plans__spacer"></div>
+                        <a href="https://t.me/xxxxxxx_bot" rel="noopener" class="plans__btn plans__btn--blue">Open Telegram Bot</a>
+                    </div>
+                </div>
+
+                <div class="plans__card plans__card--api">
+                    <div class="plans__header--api">
+                        <h2 class="plans__card-title">API + Notifications</h2>
+                    </div>
+                    <ul class="plans__list">
+                        <li class="plans__item">Connect to our API and receive periodic portfolio signals to any URL you provide.</li>
+                        <li class="plans__item">Feed those signals into your own scripts and automate your trading however you see fit.</li>
+                        <li class="plans__item">Paid plan coming soon. Free by invitation during the beta.</li>
+                        <li class="plans__item">Interested? Drop your email below and we'll reach out if you make the cut.</li>
+                    </ul>
+                    <div class="plans__footer">
+                        <input type="email" class="plans__input" placeholder="your@email.com" id="api-email">
+                        <button class="plans__btn plans__btn--corinto" id="api-request-btn">Request access</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="modal" id="api-modal">
+            <div class="modal__box">
+                <p class="modal__title">Thank you! 🎉</p>
+                <p class="modal__text">Your request has been submitted. If you're elected, we'll get in touch!</p>
+                <button class="plans__btn plans__btn--corinto modal__close" id="api-modal-close">Close</button>
+            </div>
+        </div>
+
+        
+    </main>
+
+    <site-footer></site-footer>
+
+    <script defer>
+        const modal = document.getElementById('api-modal');
+
+        document.getElementById('api-modal-close').addEventListener('click', () => {
+            modal.classList.remove('modal--visible');
+        });
+
+        document.getElementById('api-request-btn').addEventListener('click', async () => {
+            const email = document.getElementById('api-email').value;
+            await fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(
+                    { "email": email }
+                )
+            });
+            modal.classList.add('modal--visible');
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+# Compose file for local development environment.
+# Deploying this in production is... how to say... let's just state it's not recommended at all.
+
+services:
+
+  # Infrastructure
+  db:
+    image: docker.io/postgres:16
+    container_name: postgres_db
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${SQL_USER}
+      POSTGRES_PASSWORD: ${SQL_PASSWORD}
+      POSTGRES_DB: ${SQL_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 2m
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+    networks:
+      - external
+      - internal
+
+  redis:
+    image: docker.io/redis:7-alpine
+    restart: unless-stopped
+    container_name: redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    env_file:
+      - .env
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - internal
+
+  svix-server:
+    image: svix/svix-server:latest
+    container_name: svix-server
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "svix-server healthcheck http://localhost:8071"]
+      interval: 1s
+      timeout: 1s
+      retries: 600
+    env_file:
+      - .env
+    ports:
+      - "8071:8071"
+    environment:
+      - SVIX_DB_DSN=postgresql://${SQL_SVIX_USER}:${SQL_SVIX_PASSWORD}@${SQL_HOST}:${SQL_PORT}/${SQL_SVIX_DB}
+      - SVIX_REDIS_DSN=redis://${REDIS_HOST}:${REDIS_PORT}/11
+      - SVIX_JWT_SECRET=${SVIX_JWT_SECRET}
+      - SVIX_RUN_MIGRATIONS=true
+    networks:
+      - internal
+      - external
+    depends_on:
+      db: # TODO Maybe a good idea to use pgbouncer?
+          condition: service_healthy
+      redis:
+          condition: service_healthy
+
+  # Services
+  bot:
+    build: .
+    restart: unless-stopped
+    image: csa:latest
+    container_name: bot
+    env_file:
+      - .env
+    environment:
+      - SQL_HOST=postgres_db
+    command: bash -c "uv run alembic upgrade head && uv run main.py"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - internal
+      - external
+
+  api:
+    build: .
+    restart: unless-stopped
+    image: csa:latest
+    container_name: api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    networks:
+      - internal
+      - external
+    command: bash -c "uv run -m api.main"
+
+  register:
+      build: .
+      restart: unless-stopped
+      image: csa:latest
+      container_name: register
+      ports:
+        - "8001:8001"
+      env_file:
+        - .env
+      command: bash -c "uv run -m register.main"
+      networks:
+        - internal
+        - external
+
+  backtest-broker:
+    image: csa:latest
+    restart: unless-stopped
+    container_name: broker
+    env_file:
+      - .env
+    command: bash -c "uv run saq backtest.broker.broker.settings"
+    depends_on:
+      - bot
+    environment:
+      - PYTHONPATH=.
+    networks:
+      - internal
+      - external
+
+  coin-confidence-calculator:
+    image: csa:latest
+    container_name: coin-confidence-calculator
+    restart: unless-stopped
+    depends_on:
+      - bot
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=.
+      - SQL_HOST=postgres_db
+    command: uv run scripts/calculate_coin_confidence.py
+    networks:
+      - internal
+
+networks:
+  internal:
+    internal: true
+  external:
+    internal: false
+
+volumes:
+  pgdata:
+  redis_data:
+  certbot_certs:
+  certbot_www:
+
+

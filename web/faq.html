@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently asked questions about XXXXXXX — what makes us different, risks, crypto focus, and beta access.">
+    <meta name="keywords" content="crypto bot FAQ, crypto signals, non-custodial trading, crypto investment risks">
+    <meta property="og:title" content="FAQ — XXXXXXX">
+    <meta property="og:description" content="Answers to common questions about our non-custodial crypto signal bot.">
+    <meta property="og:url" content="https://xxxxxxx.com/faq.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://xxxxxxx.com/faq.html">
+    <title>FAQ — xxxxxxx</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.svg">
+    <script src="assets/components/sitenav.js" defer></script>
+    <script src="assets/components/footer.js" defer></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <site-nav></site-nav>
+
+    <main class="page">
+        <section class="faq">
+            <div class="faq__slider">
+
+                <div class="faq__slide faq__slide--active">
+                    <p class="faq__counter">01 / 04</p>
+                    <h2 class="faq__question">So this is just another crypto bot. What makes it different?</h2>
+                    <p class="faq__answer">Three things: simplicity, a service-first mindset, and a non-custodial approach. Setup takes minutes, the parameters are easy to understand, and once you're in, the bot does the work. Unlike tools that chase social media hype or fall into bull traps, we rely on live in-depth statistical analysis to make decisions.</p>
+                </div>
+
+                <div class="faq__slide">
+                    <p class="faq__counter">02 / 04</p>
+                    <h2 class="faq__question">Could I lose money?</h2>
+                    <p class="faq__answer">This service is non-custodial. We never touch your money. What we do is send you signals and show you how your portfolio would perform if you follow them. That said, crypto is a volatile market, and yes, your balance could decrease in certain scenarios. We work hard to protect capital during turbulence, but we won't pretend the risk isn't there.</p>
+                </div>
+
+                <div class="faq__slide">
+                    <p class="faq__counter">03 / 04</p>
+                    <h2 class="faq__question">Why crypto?</h2>
+                    <p class="faq__answer">Crypto is a market built for automation. The approach behind our algorithm could work with traditional stocks or FX trading too, but crypto offers far more flexible integration and fewer barriers to entry for technology-driven strategies.</p>
+                </div>
+
+                <div class="faq__slide">
+                    <p class="faq__counter">04 / 04</p>
+                    <h2 class="faq__question">If I join the beta, will my free access continue?</h2>
+                    <p class="faq__answer">We can't make guarantees at this stage, as we're still evaluating market fit and overall acceptance. What we can say is: <strong>if things go well and we move forward with a commercial model, beta users who helped us get there will keep their free access.</strong> That's the least we can do.</p>
+                </div>
+
+            </div>
+
+            <div class="faq__controls">
+                <button class="faq__btn faq__btn--prev" aria-label="Previous question">&#8592;</button>
+                <div class="faq__dots">
+                    <button class="faq__dot faq__dot--active" aria-label="Question 1"></button>
+                    <button class="faq__dot" aria-label="Question 2"></button>
+                    <button class="faq__dot" aria-label="Question 3"></button>
+                    <button class="faq__dot" aria-label="Question 4"></button>
+                </div>
+                <button class="faq__btn faq__btn--next" aria-label="Next question">&#8594;</button>
+            </div>
+        </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script>
+    (function () {
+        var slides = document.querySelectorAll('.faq__slide');
+        var dots = document.querySelectorAll('.faq__dot');
+        var prev = document.querySelector('.faq__btn--prev');
+        var next = document.querySelector('.faq__btn--next');
+        var current = 0;
+        function goTo(i) {
+            slides[current].classList.remove('faq__slide--active');
+            dots[current].classList.remove('faq__dot--active');
+            current = i;
+            slides[current].classList.add('faq__slide--active');
+            dots[current].classList.add('faq__dot--active');
+            prev.disabled = current === 0;
+            next.disabled = current === slides.length - 1;
+        }
+        prev.addEventListener('click', function() { if (current > 0) goTo(current - 1); });
+        next.addEventListener('click', function() { if (current < slides.length - 1) goTo(current + 1); });
+        dots.forEach(function(d, i) { d.addEventListener('click', function() { goTo(i); }); });
+        goTo(0);
+    }());
+    </script>
+
+</body>
+</html>

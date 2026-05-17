@@ -1,0 +1,7 @@
+﻿certbot/
+pgdata/
+redis_data/
+__pycache__/
+*.pyc
+.git/
+*.zip

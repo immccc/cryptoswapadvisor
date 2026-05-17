@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legal — xxxxxxx</title>
+  <link rel="stylesheet" href="css/main.css"/>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── LEGAL PAGE ── */
+    .legal {
+      flex: 1;
+    }
+
+    /* HEADER */
+    .legal__header {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    .legal__header-label {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .legal__header-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .legal__header-meta {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+    }
+
+    /* TOC */
+    .legal__toc {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .legal__toc-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      border: 1.5px solid var(--color-accent);
+      padding: 0.35rem 1rem;
+      border-radius: 4px;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .legal__toc-link:hover {
+      background: var(--color-accent);
+      color: var(--color-bg);
+    }
+
+    /* NOTICE */
+    .legal__notice {
+      background: rgba(123, 45, 62, 0.06);
+      border-left: 3px solid var(--color-accent);
+      padding: 1rem 1.5rem;
+      margin-bottom: 2.5rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .legal__notice-text {
+      font-size: 0.9rem;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    .legal__notice-text strong {
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    .legal__notice-text a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    /* SECTION */
+    .legal__section {
+      margin-bottom: 4rem;
+    }
+
+    .legal__section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #DDD8CE;
+    }
+
+    /* DIVIDER */
+    .legal__divider {
+      border: none;
+      border-top: 1px solid #DDD8CE;
+      margin: 3.5rem 0;
+    }
+
+    /* CLAUSE */
+    .clause {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 0 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .clause__num {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--color-accent);
+      padding-top: 0.2rem;
+      opacity: 0.7;
+    }
+
+    .clause__title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .clause__text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #2A2A2A;
+    }
+
+    .clause__text a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    .clause__text strong {
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      .clause {
+        grid-template-columns: 2rem 1fr;
+        gap: 0 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <site-nav></site-nav>
+
+  <main class="page legal">
+
+    <div class="legal__header">
+      <h1 class="legal__header-title">Terms, Conditions &amp;<br/>Privacy Policy</h1>
+      <p class="legal__header-meta">Effective date: April 2026 &nbsp;·&nbsp; xxxxxxx.com &nbsp;·&nbsp; Last updated: April 2026</p>
+    </div>
+
+    <nav class="legal__toc">
+      <a class="legal__toc-link" href="#terms">Terms &amp; Conditions</a>
+      <a class="legal__toc-link" href="#privacy">Privacy Policy</a>
+      <a class="legal__toc-link" href="#contact">Contact</a>
+    </nav>
+
+    <!-- ══ TERMS & CONDITIONS ══ -->
+    <section class="legal__section" id="terms">
+      <h2 class="legal__section-title">Terms &amp; Conditions</h2>
+
+      <div class="legal__notice">
+        <p class="legal__notice-text"><strong>Important notice:</strong> xxxxxxx ("I&amp;F") is a simulation and signal platform only. It does not manage, invest, or custody any real funds. Nothing on this platform constitutes financial advice. You are solely responsible for any financial decisions you make.</p>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 1</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Acceptance of Terms</h3>
+          <p class="clause__text">By accessing or using any service provided by xxxxxxx (the "Service"), including the Telegram bot and the premium API, you ("User") agree to be bound by these Terms and Conditions in full. If you do not agree, you must discontinue use of the Service immediately. Use of the Service is restricted to individuals aged 18 or older.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 2</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Nature of the Service — No Financial Advice</h3>
+          <p class="clause__text">The Service provides algorithmic signals, portfolio simulations, and backtesting tools for informational and educational purposes only. All outputs — including buy/sell signals, recommendations, and backtests — are generated automatically and do not constitute financial advice, investment advice, or any form of regulated financial service. I&amp;F is not a registered investment advisor, broker, or financial institution. The User is solely and entirely responsible for any decision to act upon any signal or recommendation produced by the Service.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 3</span>
+        <div class="clause__body">
+          <h3 class="clause__title">No Guarantee of Operational Continuity</h3>
+          <p class="clause__text">The Service is currently in a testing and development phase. I&amp;F does not guarantee uninterrupted availability, uptime, or continuity of the Service at any time. While I&amp;F is committed to improving system stability on an ongoing basis, the Service may be unavailable, degraded, or modified without prior notice. I&amp;F shall not be held liable for any losses or damages arising from service interruptions.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 4</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Backtesting — Limitations &amp; Queue Policy</h3>
+          <p class="clause__text">Backtesting requests are processed on a best-effort basis and are subject to a queuing system. During periods of high system load, queued backtest requests may be discarded without notification, as priority is given to real-time simulation processes. Furthermore, backtests are subject to time and asset constraints in order to prevent saturation of external exchange APIs and internal systems. As a result, backtest results may not accurately reflect the behaviour of the live bot under real market conditions. All backtest outputs must be interpreted as approximations only.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 5</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Intellectual Property</h3>
+          <p class="clause__text">The trading algorithm, signal logic, codebase, and all associated intellectual property underlying the Service are the exclusive property of the operator of xxxxxxx. Any attempt to reverse-engineer, extract, reproduce, or otherwise misappropriate the algorithm or any proprietary component of the Service — whether through the API, the Telegram bot, or any other interface — is strictly prohibited and may result in immediate termination of access and potential legal action.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 6</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Premium API &amp; Webhook Signals</h3>
+          <p class="clause__text">The premium API tier provides webhook-based signal delivery that Users may integrate with their own scripts, bots, or automated trading systems. I&amp;F transmits signals only and bears no responsibility whatsoever for any trades, financial transactions, or outcomes resulting from the User's use of or reliance on these signals. The User assumes full and exclusive responsibility for all actions taken by any system connected to the I&amp;F webhook.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 7</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Account Registration &amp; Termination</h3>
+          <p class="clause__text">Users may register for and cancel any I&amp;F service at any time, without obligation. I&amp;F reserves the right to suspend or permanently terminate access to the Service, in whole or in part, at its sole discretion and at any time, with or without cause. In the event of a significant change to or discontinuation of the Service, I&amp;F will make reasonable efforts to communicate this to Users through the official website, social media channels, or the Telegram bot.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 8</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Dependency on Third-Party Platforms</h3>
+          <p class="clause__text">The free tier of the Service is distributed via the Telegram messaging platform. The availability, features, and terms of this delivery channel are subject to decisions made by Telegram Messenger Inc., which are entirely outside the control of I&amp;F. I&amp;F accepts no liability for any disruption, change, or discontinuation of the Telegram platform that affects Service delivery.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 9</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Limitation of Liability</h3>
+          <p class="clause__text">To the maximum extent permitted by applicable law, I&amp;F shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from the use of, or inability to use, the Service, including but not limited to financial losses resulting from reliance on signals or simulations provided by the platform.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 10</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Governing Law</h3>
+          <p class="clause__text">These Terms and Conditions are governed by and construed in accordance with the laws of Spain and applicable European Union regulations. Any disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of Spain.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="legal__divider"/>
+
+    <!-- ══ PRIVACY POLICY ══ -->
+    <section class="legal__section" id="privacy">
+      <h2 class="legal__section-title">Privacy Policy</h2>
+
+      <div class="legal__notice">
+        <p class="legal__notice-text"><strong>GDPR compliance:</strong> This policy is provided in accordance with Regulation (EU) 2016/679 (General Data Protection Regulation). The data controller for this Service is the individual operator of xxxxxxx, reachable at <a href="mailto:xxxxxxx@proton.me">xxxxxxx@proton.me</a>.</p>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 1</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Data We Collect</h3>
+          <p class="clause__text"><strong>Premium API Users:</strong> We collect the email address provided during registration, used solely to manage your account and communicate service-related information.<br/><br/>
+          <strong>Free Telegram Bot Users:</strong> Interaction with the Telegram bot exposes certain Telegram-assigned identifiers to I&amp;F systems — specifically your Telegram user ID and username (if set). No additional personal data is solicited or stored beyond what is technically necessary for bot operation.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 2</span>
+        <div class="clause__body">
+          <h3 class="clause__title">How We Use Your Data</h3>
+          <p class="clause__text">Data collected by I&amp;F is used exclusively for account creation and management, authentication and access control, and service-related communications. Your data is never sold, rented, or transferred to third parties. Your data is never used for advertising, profiling, or marketing purposes of any kind.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 3</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Data Retention</h3>
+          <p class="clause__text">Personal data is retained for as long as your account remains active. Upon account deletion, your associated personal data will be permanently deleted within a reasonable timeframe. You may request deletion at any time by contacting <a href="mailto:xxxxxxx@proton.me">xxxxxxx@proton.me</a>.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 4</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Communications</h3>
+          <p class="clause__text">Official communications from I&amp;F will be issued through one or more of the following channels: the official website at <a href="https://www.xxxxxxx.com">xxxxxxx.com</a>, official I&amp;F social media accounts, or the Telegram bot. I&amp;F will not initiate unsolicited contact through other channels.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 5</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Data Infrastructure</h3>
+          <p class="clause__text">The Service infrastructure is hosted on servers operated by Hetzner Online GmbH, located in Helsinki, Finland (European Union). All data processing takes place within the European Economic Area and is subject to EU data protection law.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 6</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Your Rights under the GDPR</h3>
+          <p class="clause__text">As a data subject under GDPR, you have the right to access, correct, delete, restrict, or obtain portability of your personal data. To exercise any of these rights, contact us at <a href="mailto:xxxxxxx@proton.me">xxxxxxx@proton.me</a>. We will respond within 30 days.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 7</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Right to Lodge a Complaint</h3>
+          <p class="clause__text">If you believe your data has been processed unlawfully, you have the right to lodge a complaint with the competent supervisory authority. For users in Spain, this is the <strong>Agencia Española de Protección de Datos (AEPD)</strong> at <a href="https://www.aepd.es">www.aepd.es</a>. Users in other EU member states may contact their respective national authority.</p>
+        </div>
+      </div>
+
+      <div class="clause">
+        <span class="clause__num">§ 8</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Changes to This Policy</h3>
+          <p class="clause__text">I&amp;F may update this Privacy Policy from time to time. Any significant changes will be communicated through official I&amp;F channels as described in §4. Continued use of the Service following notification of changes constitutes acceptance of the revised policy.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="legal__divider"/>
+
+    <!-- ══ CONTACT ══ -->
+    <section class="legal__section" id="contact">
+      <h2 class="legal__section-title">Contact</h2>
+
+      <div class="clause">
+        <span class="clause__num">§</span>
+        <div class="clause__body">
+          <h3 class="clause__title">Data Controller &amp; General Enquiries</h3>
+          <p class="clause__text">For questions regarding these documents, your data rights, or any other matter related to the Service, please reach us at:<br/><br/>
+          <a href="mailto:xxxxxxx@proton.me">xxxxxxx@proton.me</a><br/>
+          <a href="https://www.xxxxxxx.com">www.xxxxxxx.com</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+
+  <script src="assets/components/sitenav.js"></script>
+  <script src="assets/components/footer.js"></script>
+
+</body>
+</html>

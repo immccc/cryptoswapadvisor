@@ -1,0 +1,79 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+
+
+        {
+            "name": "Bot",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "justMyCode": true
+        },
+       {
+            "name": "Script: Redis -> SQL",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/migrate_redis_to_sql.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Script: Confidence calculator",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/calculate_coin_confidence.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Backtesting broker",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/backtest/broker/broker.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "API",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "api.main",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Register",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "register.main",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

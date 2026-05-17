@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how XXXXXXX works — from Telegram signals to API integrations. Our algorithm evaluates trends, scores coins by confidence, and rotates portfolios automatically.">
+    <meta name="keywords" content="crypto algorithm, trend analysis, confidence scoring, portfolio rotation, crypto signals, how it works">
+    <meta property="og:title" content="How It Works — XXXXXXX">
+    <meta property="og:description" content="Discover how our algorithm evaluates trends, scores coins, and rotates portfolios to preserve capital.">
+    <meta property="og:url" content="https://xxxxxxx.com/how-it-works.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://xxxxxxx.com/how-it-works.html">
+    <title>How It Works — xxxxxxx</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.svg">
+    <script src="assets/components/sitenav.js" defer></script>
+    <script src="assets/components/footer.js" defer></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <site-nav></site-nav>
+
+    <main class="page">
+
+        <section class="how-it-works">
+            <h1 class="hiw__title">The algorithm</h1>
+            <p class="hiw__intro">
+                The bot runs continuously in the background, watching the crypto market and deciding
+                which coins to hold and which to avoid. You interact with it through two interfaces — both
+                feed into the same engine.
+            </p>
+
+            <figure class="hiw__diagram">
+                <img src="assets/images/if_diagram.svg" alt="Diagram showing the bot's data flow: User interfaces (Telegram and API) connect to the bot, which evaluates trends and tracks confidence for each coin to build a portfolio.">
+            </figure>
+
+            <div class="hiw__steps">
+
+                <div class="hiw__step">
+                    <h2 class="hiw__step-title">Two ways to connect</h2>
+                    <p class="hiw__step-text">
+                        The free <strong>Telegram bot</strong> is the simplest way to start. Send it a message and it replies with portfolio updates, charts, and signals.
+                    </p>
+                    <p class="hiw__step-text">
+                        The <strong>API</strong> is for advanced users who want to connect the bot to their own scripts and trading pipelines via webhooks.
+                    </p>
+                    <p class="hiw__step-text">
+                        Both use the exact same backend. The bot doesn't care how you ask — the logic is identical.
+                    </p>
+                </div>
+
+                <div class="hiw__step">
+                    <h2 class="hiw__step-title">Trend evaluation</h2>
+                    <p class="hiw__step-text">
+                        Every coin gets scored based on price trends over configurable time windows.
+                        Longer windows give more reliable signals; shorter ones react faster to changes.
+                    </p>
+                    <p class="hiw__step-text">
+                        If the trend is neutral or bearish, the bot doesn't invest. It stays in stablecoins and waits
+                        for better conditions.
+                    </p>
+                </div>
+
+                <div class="hiw__step">
+                    <h2 class="hiw__step-title">Confidence tracking</h2>
+                    <p class="hiw__step-text">
+                        On top of trends, every coin gets a confidence score based on how consistently it behaves.
+                    </p>
+                    <p class="hiw__step-text">
+                        Sudden uptrends after a prolonged downfall are flagged as suspicious. Erratic volatility
+                        pushes a coin down the list, while steady, predictable performers rise to the top.
+                    </p>
+                </div>
+
+                <div class="hiw__step">
+                    <h2 class="hiw__step-title">Portfolio rotation</h2>
+                    <p class="hiw__step-text">
+                        Combining trend scores and confidence, the bot selects the best coins at each rotation
+                        and tells you exactly what the new portfolio looks like.
+                    </p>
+                    <p class="hiw__step-text">
+                        Underperforming coins are rotated out. Stronger trends are rotated in. If nothing looks
+                        reliable, the bot holds everything in stablecoins and sits tight.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <site-footer></site-footer>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+VERSION_PATH_PART = "/api/v1"
