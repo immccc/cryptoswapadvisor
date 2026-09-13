@@ -22,7 +22,9 @@ Crypto Swap Advisor brings transparency to the crypto trading space. The project
 
 ## Why This Is Open Source
 
-My goal of launching a full, working product on my own apart of my full-time job, instead of just experimenting things, has been achieved. What it's left is a commercial, outreach effort that feels handicapped because of the target, a bit bloated with other bots. Despite I feel this one different, convincing about the honesty of this approach is quite harsh, given how many bots are and how many scams there was (and are) in crypto world. For next homemade products, I will try to find better better and more pleasant areas.
+This project achieved its technical goal: a complete, non-custodial signal bot. The whole stack of API, webhooks, Telegram integration, a backtesting engine, and a coin-confidence scoring service is built and shipped solo alongside a full-time Staff Engineer role. So I'm open-sourcing it instead of pursuing commercialization, after diggint a bit into that area. For what I noticed, crypto tools face a structural trust and distribution problem that has little to do with the product itself.
+
+If the backtesting engine or the webhook-based signal delivery pattern is of interest, that's the part worth exploring.
 
 ## Installation
 
